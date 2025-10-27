@@ -24,7 +24,7 @@
   </section>
   
   <footer>
-    <img src="images/Clarisa creaciones.png" alt="My Logo" id="logo">
+    <img src="images/Clarisa creaciones.png" alt="Clarisa Creaciones Logo" id="logo">
     <p>Contact: Clarisa.Crea@gmail.com    |     Instagram: clarisa.c_</p>
     <p>&copy; 2025 Clarisa. All rights reserved.</p>
   </footer>
