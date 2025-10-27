@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,12 +19,10 @@
 
   <section id="order">
     <h2>Submit an order! </h2>
-
-   <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
+   <h3 href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</h3>
   </section>
-
+  
   <footer>
-
 <p>Contact: Clarisa.Crea@gmail.com    |     Instagram: clarisa.c_</p>
     <p>&copy; 2025 Clarisa. All rights reserved.</p>
   </footer>
