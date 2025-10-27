@@ -20,7 +20,8 @@ header nav a {
 }
 
 section {
-  padding: 2rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
 }
 
 a {
