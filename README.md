@@ -9,7 +9,7 @@
 <header>
  
    <h1>Welcome to Clarisa Creaciones!</h1>
-   <h2>¡Bienvenidos! </h2>
+   <h1>¡Bienvenidos! </h1>
   </header>
 
   <section id="about">
