@@ -41,7 +41,7 @@ a:hover {
   max-width: 170px; /* adjust size */
   height: auto;
   display: block;
-  margin: 1 auto; /* centers the logo */
+  margin: 1rem auto; /* centers the logo */
   padding: 1rem;
 }
 
