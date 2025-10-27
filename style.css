@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6e3; /* Soft cream */
+  color: #6e1b1b; /* Deep burgundy */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6e1b1b;
+  color: #fdf6e3;
+  padding: 1rem;
+  text-align: center;
+}
+
+header nav a {
+  color: #fdf6e3;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+}
+
+a {
+  background-color: #6e1b1b;
+  color: #fdf6e3;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #8c2b2b;
+}
+
+
+#logo {
+  max-width: 170px; /* adjust size */
+  height: auto;
+  display: block;
+  margin: 1 auto; /* centers the logo */
+  padding: 1rem;
+
+}
