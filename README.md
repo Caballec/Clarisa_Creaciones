@@ -1,6 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Photo Orders</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <header>
  
-    <h1>Welcome to Clarisa Creaciones!</h1>
+   <h1>Welcome to Clarisa Creaciones!</h1>
    <h1>¡Bienvenidos! </h1>
   </header>
 
@@ -12,13 +21,12 @@
   <section id="order">
     <h2>Submit an order! </h2>
 
-    <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
+   <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
   </section>
 
   <footer>
-   <img src="Clarisa creaciones.png" alt="My Logo" id="logo">
+
 <p>Contact: Clarisa.Crea@gmail.com    |     Instagram: clarisa.c_</p>
     <p>&copy; 2025 Clarisa. All rights reserved.</p>
   </footer>
-</body>
-</html>
+
