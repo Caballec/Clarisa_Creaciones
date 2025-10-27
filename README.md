@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Photo Orders</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
  
    <h1>Welcome to Clarisa Creaciones!</h1>
-   <h1>¡Bienvenidos! </h1>
+   <h2>¡Bienvenidos! </h2>
   </header>
 
   <section id="about">
