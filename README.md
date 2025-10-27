@@ -19,7 +19,7 @@
 
   <section id="order">
     <h2>Submit an order! </h2>
-   <h2 href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</h2>
+   <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
   </section>
   
   <footer>
