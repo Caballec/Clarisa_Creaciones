@@ -15,6 +15,7 @@
   <section id="about">
     <h3>About Me</h3>
     <p>Hola! I’m Clarisa, I create memorable magnets! Turn your favorite photos into  keepsakes or create unique gifts for loved ones, my magnets are designed to bring a little joy to every space. Great for business cards, save the date, and much more. Let's make your memories magnetic!</p>
+     <p>My work is inspired by my Oaxacan roots, which I proudly incorporate into my brand identiy. For my logo, I chose to blen my facorite aimal and the vibrant tradition of alebrijes-creating a unique elephant alebrije that reflects both culture and creativity. Every piece is made with heart, culture, and creativity.</p>
   </section>
 
   <section id="order">
