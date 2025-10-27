@@ -20,7 +20,7 @@ header nav a {
 }
 
 section {
-  padding: 1rem 2rem;
+  padding: 2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -38,11 +38,11 @@ a:hover {
 
 
 #logo {
-  max-width: 150px; /* adjust size */
+  max-width: 170px; /* adjust size */
   height: auto;
   display: block;
-  margin: auto; /* centers the logo */
-  padding: 1rem;
+  margin: 2rem; /* centers the logo */
+  padding: 2rem;
 }
 
 /* Remove GitHub Pages automatic anchor icons from headings */
