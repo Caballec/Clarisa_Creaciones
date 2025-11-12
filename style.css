@@ -34,19 +34,19 @@ section {
 }
 
 #payment a {
+  display: inline-block; /* allows padding if needed */
   color: #6e1b1b;
-  font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: normal;
+  transition: color 0.3s ease; 
 }
 
 #payment a:hover {
-  background-color: #ffffff; /* light “glow” hover */
-  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
-  color: #6e1b1b;
-  border-radius: 5px;
-  padding: 0.2rem 0.4rem;
+    background-color: #ffffff; /* nearly pure white */
+  color: #6e1b1b;            /* dark text for contrast */
+  box-shadow: 0 0 12px #ffffff, 0 0 24px #ffffff, 0 0 36px #ffffff; /* strong white glow */
 }
+
 
 
 #order {
