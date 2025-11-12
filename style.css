@@ -63,11 +63,9 @@ section {
 }
 
 #contact a:hover {
-  background-color: #8c2b2b;  /* darker/lighter burgundy */
-  color: #fff8e7;  
-  /* background-color: #fff8b3; /* light yellow / “lit up” glow */
-  /* color: #6e1b1b;            /* text stays dark for readability */ 
-  /* box-shadow: 0 0 8px #fff8b3, 0 0 16px #fff8b3; /* soft glow effect */ 
+  background-color: #fffde7; /* very pale cream/near-white */
+  color: #6e1b1b;            /* keep text readable */
+  box-shadow: 0 0 6px #fffde7, 0 0 12px #fffde7; /* subtle glow */
 }
 
 
