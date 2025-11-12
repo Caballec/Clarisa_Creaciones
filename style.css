@@ -42,8 +42,8 @@ a:hover {
   max-width: 170px; /* adjust size */
   height: auto;
   display: block;
-  margin: 2rem; /* centers the logo */
-  padding: 2rem;
+  margin: 1rem; /* centers the logo */
+  padding: 1rem;
 }
 
 /* Remove GitHub Pages automatic anchor icons from headings */
