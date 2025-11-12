@@ -32,20 +32,15 @@ a {
   border-radius: 5px;
 }
 
-c {
-  background-color: #6e1b1b;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-}
+
 
 #order c:hover {
   color: #fff8b3;
 }
 
 #contact {
-  padding: 2rem;
-  /* background-color: #fff7e6; /* soft light background to differentiate */
+  padding: 1rem;
+  background-color: #fff7e6; /* soft light background to differentiate */
   border-top: 2px solid #6e1b1b;
 }
 /* 
@@ -56,7 +51,7 @@ c {
 
 #contact a {
   color: #6e1b1b;
-  text-decoration: none;
+  text-decoration: underlined;
   font-weight: bold;
 }
 
