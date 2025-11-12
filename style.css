@@ -20,7 +20,7 @@ header nav a {
 }
 
 section {
-  padding: 1rem;
+  padding: 2rem;
   /* margin-bottom: 1rem; */
 }
 
@@ -36,6 +36,7 @@ a {
 
 #order c:hover {
   color: #fff8b3;
+  padding: 1rem;
 }
 
 #contact {
@@ -67,7 +68,7 @@ a {
   height: auto;
   display: block;
   /* margin: 1rem; /* centers the logo */ */
-  padding: 1rem;
+  padding: 2rem;
 }
 
 /* Remove GitHub Pages automatic anchor icons from headings */
