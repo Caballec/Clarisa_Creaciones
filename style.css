@@ -48,6 +48,7 @@ section {
 #contact {
   text-align: center;  /* centers all inline/inline-block elements inside */
   padding: 1rem;
+  font-weight: bold;  
   background-color: #fdf6e3;
   border-top: 2px solid #6e1b1b;
 }
