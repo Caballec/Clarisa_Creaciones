@@ -59,10 +59,17 @@ section {
 
 #logo {
   /* background-color: transparent; */
-  max-width: 200px; /* adjust size */
+  max-width: 180px; /* adjust size */
   height: auto;
   display: block;
   margin: 1rem; /* centers the logo */
   padding: 2rem;
 }
+
+#footer {
+  /* background-color: transparent; */
+  margin: 1rem; /* centers the footer*/
+  padding: 2rem;
+}
+
 
