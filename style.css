@@ -39,7 +39,7 @@ section {
 }
 
 #order a:hover {
-  background-color: #8c2b2b;
+  background-color: #9c3333;
   color: #fff8e7;
 
 
@@ -57,11 +57,13 @@ section {
   color: #6e1b1b;
   text-decoration: none;
   font-weight: normal;
+  transition: color 0.3s ease; /* smooth hover */
 
 }
 
 #contact a:hover {
-  color: #fff8e7;
+  background-color: #9c3333;
+  color: #5a1616;
 }
 
 
