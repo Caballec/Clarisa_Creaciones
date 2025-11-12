@@ -32,9 +32,7 @@ a {
   border-radius: 5px;
 }
 
-a:hover {
-  background-color: #8c2b2b;
-}
+
 #contact {
   padding: 2rem;
   background-color: #fff7e6; /* soft light background to differentiate */
@@ -52,9 +50,9 @@ a:hover {
   font-weight: bold;
 }
 
-#contact a:hover {
+/* #contact a:hover {
   color: #8c2b2b;
-}
+} */
 
 
 
