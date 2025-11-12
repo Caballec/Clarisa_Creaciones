@@ -63,9 +63,10 @@ section {
 }
 
 #contact a:hover {
-  background-color: #fffce0; /* slightly brighter pale cream */
-  color: #6e1b1b;            /* dark text */
-  box-shadow: 0 0 12px #fffce0, 0 0 24px #fffce0, 0 0 36px #fffce0; /*  glow */
+  background-color: #ffffff; /* nearly pure white */
+  color: #6e1b1b;            /* dark text for contrast */
+  box-shadow: 0 0 12px #ffffff, 0 0 24px #ffffff, 0 0 36px #ffffff; /* strong white glow */
+
 }
 
 
