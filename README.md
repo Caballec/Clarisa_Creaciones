@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script src="script.js"></script>
+
 <header>
  
    <h1>Welcome to Clarisa Creaciones!</h1>
@@ -14,14 +16,20 @@
 
   <section id="about">
     <h3>About Me</h3>
-    <p>Hola! I’m Clarisa, I create memorable magnets! Turn your favorite photos into  keepsakes or create unique gifts for loved ones, my magnets are designed to bring a little joy to every space. Great for business cards, save the date, and much more. Let's make your memories magnetic!</p>
-     <p>My work is inspired by my Oaxacan roots, which I proudly incorporate into my brand identiy. For my logo, I chose to blend my facorite animal and the vibrant tradition of alebrijes-creating a unique elephant alebrije that reflects both culture and creativity. </p>
-  </section>
+    <p> Hola! I’m Clarisa, I create memorable magnets! As an innovator, I’m always exploring new ways to bring creativity to life from stickers to fully customized items. Ensuring every product is as unique as the person receiving it. Reach out for those customizable products! Turn your favorite photos into keepsakes or create unique gifts for loved ones, my magnets are designed to bring a little joy to every space. Great for business cards, save the date, and much more. Let's make your memories magnetic!</p>
+     <p>My work is inspired by my Oaxacan roots, which I proudly incorporate into my brand identiy. For my logo, I chose to blend my favorite animal and the vibrant tradition of alebrijes-creating a unique elephant alebrije that reflects both culture and creativity. </p>
 
   <section id="order">
     <h2>Submit an order! </h2>
    <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
   </section>
+    
+<section id="contact">
+  <h3>Contact</h3>
+  <p>Email: <a href="mailto:Clarisa.crea@gmail.com">Clarisa.crea@gmail.com</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/Clarisa.c_/" target="_blank">@Clarisa.c_</a></p>
+</section>
+
   
   <footer>
     <img src="Clarisa creaciones.png" alt="Clarisa Creaciones Logo" id="logo">
