@@ -26,13 +26,16 @@ section {
 
 
 #order a {
+  display: block;       /* allows margin auto to work */
+  width: fit-content;   /* shrink to the size of the content */
+  margin: 0 auto;       /* centers the link */
   background-color: #6e1b1b;
   color: #fdf6e3;
-  margin: 0 auto; 
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
 }
+
 
 #order a:hover {
   color: #5a1616;
