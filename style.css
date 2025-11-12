@@ -24,11 +24,12 @@ section {
   /* margin-bottom: 1rem; */
 }
 
+#order {
+  text-align: center; /* centers both the heading and link */
+}
 
 #order a {
-  display: block;       /* allows margin auto to work */
-  width: fit-content;   /* shrink to the size of the content */
-  margin: 0 auto;       /* centers the link */
+  display: inline-block; /* keeps padding intact */
   background-color: #6e1b1b;
   color: #fdf6e3;
   padding: 0.5rem 1rem;
@@ -36,9 +37,8 @@ section {
   border-radius: 5px;
 }
 
-
 #order a:hover {
-  color: #5a1616;
+  color: #fff8e7;
 
 
 }
@@ -51,17 +51,15 @@ section {
 }
 
 #contact a {
-  background-color: none;
+  display: inline-block; /* allows padding if needed */
   color: #6e1b1b;
   text-decoration: none;
   font-weight: normal;
-  /* padding: 1rem; */
-  /* background-color: #fff7e6; /* soft light background to differentiate */
-  /* border-top: 2px solid #6e1b1b; */
+
 }
 
 #contact a:hover {
-  color: #5a1616;
+  color: #fff8e7;
 }
 
 
