@@ -25,9 +25,10 @@ section {
 }
 
 
-  #order a {
+#order a {
   background-color: #6e1b1b;
   color: #fdf6e3;
+  margin: 0 auto; 
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
@@ -36,19 +37,24 @@ section {
 #order a:hover {
   color: #fdf6e3;
   padding: 1rem;
-  margin: 1rem; 
+
 }
 
+#contact {
+  text-align: center;  /* centers all inline/inline-block elements inside */
+  padding: 1rem;
+  background-color: none;
+  border-top: 2px solid #6e1b1b;
+}
 
 #contact a {
   background-color: none;
   color: #6e1b1b;
   text-decoration: none;
   font-weight: normal;
-  padding: 1rem;
+  /* padding: 1rem; */
   /* background-color: #fff7e6; /* soft light background to differentiate */
-  border-top: 2px solid #6e1b1b;
-  margin: 1rem; 
+  /* border-top: 2px solid #6e1b1b; */
 }
 
 #contact a:hover {
@@ -59,17 +65,12 @@ section {
 
 #logo {
   /* background-color: transparent; */
-  max-width: 180px; /* adjust size */
+  max-width: 200px; /* adjust size */
   height: auto;
   display: block;
-  margin: 1rem; /* centers the logo */
+  margin: 0 auto; /* centers the logo horizontally */
   padding: 2rem;
 }
 
-#footer {
-  /* background-color: transparent; */
-  margin: 1rem; /* centers the footer*/
-  padding: 2rem;
-}
 
 
