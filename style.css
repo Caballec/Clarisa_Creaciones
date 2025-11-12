@@ -24,7 +24,8 @@ section {
   /* margin-bottom: 1rem; */
 }
 
-a {
+
+  #order a {
   background-color: #6e1b1b;
   color: #fdf6e3;
   padding: 0.5rem 1rem;
@@ -32,16 +33,18 @@ a {
   border-radius: 5px;
 }
 
-
-
-#order c:hover {
-  color: #fff8b3;
+#order a:hover {
+  color: #fdf6e3;
   padding: 1rem;
 }
 
-#contact {
+
+#contact a {
+  color: #6e1b1b;
+  text-decoration: underlined;
+  font-weight: normal;
   padding: 1rem;
-  background-color: #fff7e6; /* soft light background to differentiate */
+  /* background-color: #fff7e6; /* soft light background to differentiate */ */
   border-top: 2px solid #6e1b1b;
 }
 /* 
@@ -50,14 +53,8 @@ a {
   margin-bottom: 1rem;
 } */
 
-#contact a {
-  color: #6e1b1b;
-  text-decoration: underlined;
-  font-weight: bold;
-}
-
 #contact a:hover {
-  color: #fff8b3;
+  color: #fdf6e3;
 }
 
 
