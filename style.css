@@ -36,16 +36,19 @@ section {
 #order a:hover {
   color: #fdf6e3;
   padding: 1rem;
+  margin: 1rem; 
 }
 
 
 #contact a {
+  background-color: none;
   color: #6e1b1b;
-  text-decoration: underlined;
+  text-decoration: none;
   font-weight: normal;
   padding: 1rem;
   /* background-color: #fff7e6; /* soft light background to differentiate */
   border-top: 2px solid #6e1b1b;
+  margin: 1rem; 
 }
 
 #contact a:hover {
@@ -59,7 +62,7 @@ section {
   max-width: 200px; /* adjust size */
   height: auto;
   display: block;
-  /* margin: 1rem; /* centers the logo */ */
+  margin: 1rem; /* centers the logo */
   padding: 2rem;
 }
 
