@@ -21,12 +21,19 @@ header nav a {
 
 section {
   padding: 1rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 a {
   background-color: #6e1b1b;
   color: #fdf6e3;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+c {
+  background-color: #6e1b1b;
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
@@ -61,7 +68,7 @@ a {
 
 #logo {
   /* background-color: transparent; */
-  max-width: 190px; /* adjust size */
+  max-width: 200px; /* adjust size */
   height: auto;
   display: block;
   /* margin: 1rem; /* centers the logo */ */
@@ -69,6 +76,6 @@ a {
 }
 
 /* Remove GitHub Pages automatic anchor icons from headings */
-a.anchor {
+/* a.anchor {
   display: none;
-}
+} */
