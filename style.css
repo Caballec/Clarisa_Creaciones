@@ -69,8 +69,17 @@ section {
   height: auto;
   display: block;
   margin: 0 auto; /* centers the logo horizontally */
-  padding: 2rem;
+  padding: 0.5rem;
 }
+
+footer {
+  display: flex;
+  flex-direction: column; /* stack logo above text */
+  align-items: center;    /* center everything horizontally */
+  justify-content: center; /* optional vertical centering */
+  padding: 1rem 1rem;
+}
+
 
 
 
