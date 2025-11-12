@@ -24,6 +24,31 @@ section {
   /* margin-bottom: 1rem; */
 }
 
+
+#payment {
+  background-color: #fff7e6; /* soft cream background to match theme */
+  border-top: 2px solid #6e1b1b;
+  padding: 2rem;
+  color: #6e1b1b;
+  text-align: center;
+}
+
+#payment a {
+  color: #6e1b1b;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#payment a:hover {
+  background-color: #ffffff; /* light “glow” hover */
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  color: #6e1b1b;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+}
+
+
 #order {
   text-align: center; /* centers both the heading and link */
 }
