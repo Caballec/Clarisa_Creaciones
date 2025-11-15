@@ -13,33 +13,42 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Import Firebase modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCIqa45svbHeOKq4TQbXR3XV1nI14umrgA",
+  authDomain: "clarisa-creaciones.firebaseapp.com",
+  projectId: "clarisa-creaciones",
+  storageBucket: "clarisa-creaciones.firebasestorage.app",
+  messagingSenderId: "1019220536786",
+  appId: "1:1019220536786:web:81ff22b8d8f1eff6812c0b",
+  measurementId: "G-TE3V03WL1X"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+
+// Form submission
 const form = document.getElementById('customOrderForm');
-const statusDiv = document.createElement('div'); // or use existing #status div
-statusDiv.id = 'status';
-form.after(statusDiv); // make sure the status div exists
+const statusDiv = document.getElementById('status');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   const file = form.photo.files[0];
-  const name = form.name.value;
-  const email = form.email.value;
-
   if (!file) return alert("Please select a photo");
 
-  // Optional: include metadata with the upload
-  const metadata = {
-    customMetadata: {
-      name,
-      email
-    }
-  };
-
-  const storageRef = storage.ref(`orders/${Date.now()}_${file.name}`);
+  // Create a unique reference in Firebase Storage
+  const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
 
   try {
-    const snapshot = await storageRef.put(file, metadata);
-    const downloadURL = await snapshot.ref.getDownloadURL();
+    // Upload file
+    const snapshot = await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+
     statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
     console.log("Uploaded file URL:", downloadURL);
   } catch (err) {
@@ -47,4 +56,3 @@ form.addEventListener('submit', async (e) => {
     statusDiv.innerText = "Upload failed: " + err.message;
   }
 });
-
