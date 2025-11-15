@@ -30,23 +30,41 @@
     <h2>Submit an order! </h2>
    <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
 
-     <form id="customOrderForm">
-    <label>Name:</label>
-    <input type="text" name="name" required>
-
-    <label>Email:</label>
-    <input type="email" name="email" required>
-
-    <label>Notes / Details:</label>
-    <textarea name="notes"></textarea>
-
-    <label>Upload Photo:</label>
-    <input type="file" name="photo" accept="image/*" required>
-
-    <button type="submit">Submit Order</button>
-  </form>
-  <div id="status"></div>
   </section>
+
+  <form id="customOrderForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="file" name="photo" accept="image/*" required>
+  <button type="submit">Submit Order</button>
+</form>
+
+<div id="status"></div>
+
+<script>
+const form = document.getElementById('customOrderForm');
+const statusDiv = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const file = form.photo.files[0];
+  if (!file) return alert("Please select a photo");
+
+  // Reference in Firebase Storage
+  const storageRef = storage.ref(`orders/${Date.now()}_${file.name}`);
+
+  try {
+    const snapshot = await storageRef.put(file); // upload file
+    const downloadURL = await snapshot.ref.getDownloadURL();
+    statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+    console.log("Uploaded file URL:", downloadURL);
+  } catch (err) {
+    console.error(err);
+    statusDiv.innerText = "Upload failed: " + err.message;
+  }
+});
+</script>
+
 
     <section id="payment">
   <h3>Payment Options</h3>
@@ -69,15 +87,13 @@
 </footer>
 
   
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+<!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/10.24.0/firebase-app-compat.js"></script>
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/10.24.0/firebase-storage-compat.js"></script>
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  <script>
+  // Your Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCIqa45svbHeOKq4TQbXR3XV1nI14umrgA",
     authDomain: "clarisa-creaciones.firebaseapp.com",
@@ -89,9 +105,10 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
 </script>
+
   
   </body>
 </html>
