@@ -39,34 +39,8 @@
   <button type="submit">Submit Order</button>
 </form>
 
-<div id="status"></div>
 
-<script>
-const form = document.getElementById('customOrderForm');
-const statusDiv = document.getElementById('status');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const file = form.photo.files[0];
-  if (!file) return alert("Please select a photo");
-
-  // Reference in Firebase Storage
-  const storageRef = storage.ref(`orders/${Date.now()}_${file.name}`);
-
-  try {
-    const snapshot = await storageRef.put(file); // upload file
-    const downloadURL = await snapshot.ref.getDownloadURL();
-    statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-    console.log("Uploaded file URL:", downloadURL);
-  } catch (err) {
-    console.error(err);
-    statusDiv.innerText = "Upload failed: " + err.message;
-  }
-});
-</script>
-
-
-    <section id="payment">
+<section id="payment">
   <h3>Payment Options</h3>
   <p>For your convenience, I currently accept the following payment methods:</p>
     <p><strong>Venmo:</strong> <a href="https://venmo.com/clarisa_C" target="_blank">@clarisa_C</a></p>
