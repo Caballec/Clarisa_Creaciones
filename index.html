@@ -29,6 +29,23 @@
   <section id="order">
     <h2>Submit an order! </h2>
    <a href=" https://forms.gle/C1uub2GmQkwv9gdC7" target="_blank">Order Form</a>
+
+     <form id="customOrderForm">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Notes / Details:</label>
+    <textarea name="notes"></textarea>
+
+    <label>Upload Photo:</label>
+    <input type="file" name="photo" accept="image/*" required>
+
+    <button type="submit">Submit Order</button>
+  </form>
+  <div id="status"></div>
   </section>
 
     <section id="payment">
