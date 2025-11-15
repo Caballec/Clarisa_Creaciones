@@ -12,3 +12,8 @@ window.addEventListener("scroll", () => {
     header.style.backgroundColor = "#6e1b1b";
   }
 });
+
+// 'file' is the File object selected by the user from an <input type="file">
+const storageRef = storage.ref(`orders/${gs://clarisa-creaciones.firebasestorage.app}`); // path inside your bucket
+await storageRef.put(file); // upload the file
+
