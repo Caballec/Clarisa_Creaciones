@@ -13,7 +13,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 'file' is the File object selected by the user from an <input type="file">
-const storageRef = storage.ref(`orders/${gs://clarisa-creaciones.firebasestorage.app}`); // path inside your bucket
-await storageRef.put(file); // upload the file
+const form = document.getElementById('customOrderForm');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const fileInput = form.querySelector('input[name="photo"]');
+  const file = fileInput.files[0];  // get the file object
+  if (!file) return alert("Please select a photo");
+
+  const storageRef = storage.ref(`orders/${Date.now()}_${file.name}`);
+
+  try {
+    const snapshot = await storageRef.put(file);
+    const downloadURL = await snapshot.ref.getDownloadURL();
+    console.log("File uploaded! URL:", downloadURL);
+  } catch (err) {
+    console.error("Upload failed:", err);
+  }
+});
 
