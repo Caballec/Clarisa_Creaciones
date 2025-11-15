@@ -94,9 +94,6 @@ form.addEventListener('submit', async (e) => {
 
   
   <script>
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
   
   // Your Firebase configuration
   const firebaseConfig = {
@@ -108,6 +105,10 @@ form.addEventListener('submit', async (e) => {
     appId: "1:1019220536786:web:81ff22b8d8f1eff6812c0b",
     measurementId: "G-TE3V03WL1X"
   };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
 
 
 </script>
