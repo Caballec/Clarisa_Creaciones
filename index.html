@@ -86,13 +86,18 @@ form.addEventListener('submit', async (e) => {
     <p> &copy; 2025 Clarisa. All rights reserved.</p>
 </footer>
 
-  
+
 <!-- Firebase App (core) -->
 <script src="https://www.gstatic.com/firebasejs/10.24.0/firebase-app-compat.js"></script>
 <!-- Firebase Storage -->
 <script src="https://www.gstatic.com/firebasejs/10.24.0/firebase-storage-compat.js"></script>
 
+  
   <script>
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
+  
   // Your Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCIqa45svbHeOKq4TQbXR3XV1nI14umrgA",
@@ -104,9 +109,7 @@ form.addEventListener('submit', async (e) => {
     measurementId: "G-TE3V03WL1X"
   };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
+
 </script>
 
   
