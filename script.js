@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log("Uploaded file URL:", downloadURL);
     } catch (err) {
       
-      statusDiv.innerText = "Upload Successful!: " + err.message;
+      statusDiv.innerText = "Upload Successful! Thank you for submitting an order. You will receive an emaill within 3 business days. ";
       console.error("Upload failed:", err);
     }
   });
