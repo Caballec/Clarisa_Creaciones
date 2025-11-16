@@ -32,12 +32,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
-const metadata = {
-  customMetadata: {
-    name: form.name.value,
-    email: form.email.value
-  }
-};
 
 // Wait until the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', () => {
@@ -54,6 +48,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const nameInput = form.name.value.replace(/\s+/g, '_');  // replace spaces with underscores
     const emailInput = form.email.value.replace(/\s+/g, '_');
 
+    const metadata = {
+      customMetadata: {
+        name: form.name.value,
+        email: form.email.value
+  }
+};
+
     // Create a unique reference in Firebase Storage
     const storageRef = ref(storage, `orders/${nameInput}_${emailInput}_${file.name}`);
 
@@ -65,7 +66,10 @@ window.addEventListener('DOMContentLoaded', () => {
       const downloadURL = await getDownloadURL(snapshot.ref);
       statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
       console.log("Uploaded file URL:", downloadURL);
-      statusDiv.innerText = "Upload Successful! Thank you for submitting an order. You will receive an emaill within 3 business days. ";
+      
+    } catch (err) {
+      console.error("Upload failed:", err);
+      statusDiv.innerText = "Upload failed: " + err.message;
   
     }
   });
