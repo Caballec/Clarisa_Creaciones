@@ -38,63 +38,26 @@ window.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById("photoInput");
   const statusDiv = document.getElementById('status');
 
+
   form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    const file = fileInput.files[0];
+    if (!file) return alert("Please select a file.");
 
-  const name = form.name.value;
-  const email = form.email.value;
-  const file = form.photo.files[0];
+    // Create a unique reference in Firebase Storage
+    const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
 
-  if (!file) return alert("Please select a file");
+    try {
+      // Upload file
+      const snapshot = await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(snapshot.ref);
 
-  // Create unique file reference
-  const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
-
-  // Add metadata
-  const metadata = {
-    customMetadata: {
-      name: name,
-      email: email
-    }
-  };
-
-    
-
-  try {
-    const snapshot = await uploadBytes(storageRef, file, metadata);
-    const downloadURL = await getDownloadURL(snapshot.ref);
-
-    statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-    console.log("File uploaded:", downloadURL);
-      // Retrieve metadata from uploaded file
-    // const meta = await getMetadata(snapshot.ref);
-
-  } catch (err) {
-    statusDiv.innerText = "Upload failed: " + err.message;
-    console.error("Upload failed:", err);
-  }
-});
-
-
-  // form.addEventListener('submit', async (e) => {
-  //   e.preventDefault();
-  //   const file = fileInput.files[0];
-  //   if (!file) return alert("Please select a file.");
-
-  //   // Create a unique reference in Firebase Storage
-  //   const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
-
-  //   try {
-  //     // Upload file
-  //     const snapshot = await uploadBytes(storageRef, file);
-  //     const downloadURL = await getDownloadURL(snapshot.ref);
-
-  //     statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-  //     console.log("Uploaded file URL:", downloadURL);
-  //   } catch (err) {
+      statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+      console.log("Uploaded file URL:", downloadURL);
+    } catch (err) {
       
-  //     statusDiv.innerText = "Upload failed: " + err.message;
-  //     console.error("Upload failed:", err);
-  //   }
-  // });
+      statusDiv.innerText = "Upload failed: " + err.message;
+      console.error("Upload failed:", err);
+    }
+  });
 });
