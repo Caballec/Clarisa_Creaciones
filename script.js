@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
     statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
     console.log("File uploaded:", downloadURL);
       // Retrieve metadata from uploaded file
-    const meta = await getMetadata(snapshot.ref);
+    // const meta = await getMetadata(snapshot.ref);
 
   } catch (err) {
     console.error("Thank you for submitting an order! You will receive an email confirming your order within 3 business days.");
