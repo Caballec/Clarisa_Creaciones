@@ -39,24 +39,58 @@ window.addEventListener('DOMContentLoaded', () => {
   const statusDiv = document.getElementById('status');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const file = fileInput.files[0];
-    if (!file) return alert("Please select a file.");
+  e.preventDefault();
 
-    // Create a unique reference in Firebase Storage
-    const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+  const name = form.name.value;
+  const email = form.email.value;
+  const file = form.photo.files[0];
 
-    try {
-      // Upload file
-      const snapshot = await uploadBytes(storageRef, file);
-      const downloadURL = await getDownloadURL(snapshot.ref);
+  if (!file) return alert("Please select a file");
 
-      statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-      console.log("Uploaded file URL:", downloadURL);
-    } catch (err) {
-      
-      statusDiv.innerText = "Upload failed: " + err.message;
-      console.error("Upload failed:", err);
+  // Create unique file reference
+  const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+
+  // Add metadata
+  const metadata = {
+    customMetadata: {
+      name: name,
+      email: email
     }
-  });
+  };
+
+  try {
+    const snapshot = await uploadBytes(storageRef, file, metadata);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+
+    statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+    console.log("File uploaded:", downloadURL);
+
+  } catch (err) {
+    console.error("Upload failed:", err);
+    statusDiv.innerText = "Thank you for submitting an order! Your upload was successful! You will be receiving a confirmation email within 3 business days. ";
+  }
+});
+
+
+  // form.addEventListener('submit', async (e) => {
+  //   e.preventDefault();
+  //   const file = fileInput.files[0];
+  //   if (!file) return alert("Please select a file.");
+
+  //   // Create a unique reference in Firebase Storage
+  //   const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+
+  //   try {
+  //     // Upload file
+  //     const snapshot = await uploadBytes(storageRef, file);
+  //     const downloadURL = await getDownloadURL(snapshot.ref);
+
+  //     statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+  //     console.log("Uploaded file URL:", downloadURL);
+  //   } catch (err) {
+      
+  //     statusDiv.innerText = "Upload failed: " + err.message;
+  //     console.error("Upload failed:", err);
+  //   }
+  // });
 });
