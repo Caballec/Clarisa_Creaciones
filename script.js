@@ -36,6 +36,12 @@ const storage = getStorage(app);
 const form = document.getElementById('customOrderForm');
 const statusDiv = document.getElementById('status');
 
+// Wait until the DOM is fully loaded
+window.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('customOrderForm');
+  const statusDiv = document.getElementById('status');
+
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const file = form.photo.files[0];
