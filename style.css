@@ -24,6 +24,12 @@ section {
   /* margin-bottom: 1rem; */
 }
 
+#cost {
+  text-align: center;  /* centers all inline/inline-block elements inside */
+  padding: 1rem;
+
+}
+
 
 #payment {
   background-color: #fff7e6; /* soft cream background to match theme */
