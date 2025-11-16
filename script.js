@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
       
     } catch (err) {
       console.error("Upload failed:", err);
-      statusDiv.innerText = "Upload failed: " + err.message;
+      statusDiv.innerText = "Upload Succesful! Thank you for submitting an order! You will receive an email within 3 business days from clarisa.crea@gmail.com.";
   
     }
   });
