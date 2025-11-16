@@ -35,12 +35,13 @@ const storage = getStorage(app);
 // Wait until the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('customOrderForm');
+  const fileInput = document.getElementById("photoInput");
   const statusDiv = document.getElementById('status');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const file = form.photo.files[0];
-    if (!file) return alert("Please select a photo");
+    const file = fileInput.files[0];
+    if (!file) return alert("Please select a file.");
 
     // Create a unique reference in Firebase Storage
     const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
@@ -53,8 +54,9 @@ window.addEventListener('DOMContentLoaded', () => {
       statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
       console.log("Uploaded file URL:", downloadURL);
     } catch (err) {
-      console.error("Upload failed:", err);
+      
       statusDiv.innerText = "Upload failed: " + err.message;
+      console.error("Upload failed:", err);
     }
   });
 });
