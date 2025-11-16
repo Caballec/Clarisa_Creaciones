@@ -44,12 +44,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const file = fileInput.files[0];
     if (!file) return alert("Please select a file.");
 
-    // Create a unique reference in Firebase Storage
-    const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+    const nameInput = form.name.value.replace(/\s+/g, '_');  // replace spaces with underscores
+    const emailInput = form.email.value.replace(/\s+/g, '_');
 
+    // Create a unique reference in Firebase Storage
+    const storageRef = ref(storage, `orders/${nameInput}_${emailInput}_${file.name}`);
+
+  const metadata = {
+  customMetadata: {
+    name: form.name.value,
+    email: form.email.value
+  }
+};
+
+    
     try {
       // Upload file
-      const snapshot = await uploadBytes(storageRef, file);
+      const snapshot = await uploadBytes(storageRef, file, metadata);
       const downloadURL = await getDownloadURL(snapshot.ref);
 
       statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
