@@ -32,33 +32,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
-// Form submission
-const form = document.getElementById('customOrderForm');
-const statusDiv = document.getElementById('status');
-
 // Wait until the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('customOrderForm');
   const statusDiv = document.getElementById('status');
 
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const file = form.photo.files[0];
+    if (!file) return alert("Please select a photo");
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const file = form.photo.files[0];
-  if (!file) return alert("Please select a photo");
+    // Create a unique reference in Firebase Storage
+    const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
 
-  // Create a unique reference in Firebase Storage
-  const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+    try {
+      // Upload file
+      const snapshot = await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(snapshot.ref);
 
-  try {
-    // Upload file
-    const snapshot = await uploadBytes(storageRef, file);
-    const downloadURL = await getDownloadURL(snapshot.ref);
-
-    statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-    console.log("Uploaded file URL:", downloadURL);
-  } catch (err) {
-    console.error("Upload failed:", err);
-    statusDiv.innerText = "Upload failed: " + err.message;
-  }
+      statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+      console.log("Uploaded file URL:", downloadURL);
+    } catch (err) {
+      console.error("Upload failed:", err);
+      statusDiv.innerText = "Upload failed: " + err.message;
+    }
+  });
 });
