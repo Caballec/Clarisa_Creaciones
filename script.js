@@ -70,8 +70,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // const meta = await getMetadata(snapshot.ref);
 
   } catch (err) {
-    console.error("Upload failed:", err);
     statusDiv.innerText = "Upload failed: " + err.message;
+    console.error("Upload failed:", err);
   }
 });
 
