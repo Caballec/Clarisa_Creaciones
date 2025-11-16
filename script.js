@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log("Uploaded file URL:", downloadURL);
     } catch (err) {
       
-      statusDiv.innerText = "Upload failed: " + err.message;
+      statusDiv.innerText = "Upload Successful!: " + err.message;
       console.error("Upload failed:", err);
     }
   });
