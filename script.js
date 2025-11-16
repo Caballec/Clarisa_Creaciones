@@ -62,13 +62,9 @@ window.addEventListener('DOMContentLoaded', () => {
       // Upload file
       const snapshot = await uploadBytes(storageRef, file, metadata);
       const downloadURL = await getDownloadURL(snapshot.ref);
-
-      statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-      console.log("Uploaded file URL:", downloadURL);
-    } catch (err) {
       
       statusDiv.innerText = "Upload Successful! Thank you for submitting an order. You will receive an emaill within 3 business days. ";
-      console.error("Upload failed:", err);
+  
     }
   });
 });
