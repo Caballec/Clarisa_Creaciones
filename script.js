@@ -32,6 +32,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
+const metadata = {
+  customMetadata: {
+    name: form.name.value,
+    email: form.email.value
+  }
+};
+
 // Wait until the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('customOrderForm');
@@ -50,12 +57,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Create a unique reference in Firebase Storage
     const storageRef = ref(storage, `orders/${nameInput}_${emailInput}_${file.name}`);
 
-  const metadata = {
-  customMetadata: {
-    name: form.name.value,
-    email: form.email.value
-  }
-};
 
     
     try {
