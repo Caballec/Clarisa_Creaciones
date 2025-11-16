@@ -70,8 +70,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // const meta = await getMetadata(snapshot.ref);
 
   } catch (err) {
-    console.error("Thank you for submitting an order! You will receive an email confirming your order within 3 business days.");
-    statusDiv.innerText = "Successful!";
+    console.error("Upload Successful!:", err);
+    statusDiv.innerText = "Upload failed: " + err.message;
   }
 });
 
