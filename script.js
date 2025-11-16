@@ -13,55 +13,56 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Import Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+// // Import Firebase modules
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+// import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCIqa45svbHeOKq4TQbXR3XV1nI14umrgA",
-  authDomain: "clarisa-creaciones.firebaseapp.com",
-  projectId: "clarisa-creaciones",
-  storageBucket: "clarisa-creaciones.firebasestorage.app",
-  messagingSenderId: "1019220536786",
-  appId: "1:1019220536786:web:81ff22b8d8f1eff6812c0b",
-  measurementId: "G-TE3V03WL1X"
-};
+// // Your Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCIqa45svbHeOKq4TQbXR3XV1nI14umrgA",
+//   authDomain: "clarisa-creaciones.firebaseapp.com",
+//   projectId: "clarisa-creaciones",
+//   storageBucket: "clarisa-creaciones.firebasestorage.app",
+//   messagingSenderId: "1019220536786",
+//   appId: "1:1019220536786:web:81ff22b8d8f1eff6812c0b",
+//   measurementId: "G-TE3V03WL1X"
+// };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
-
-
-// Wait until the DOM is fully loaded
-window.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('customOrderForm');
-  const fileInput = document.getElementById("photoInput");
-  const statusDiv = document.getElementById('status');
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const storage = getStorage(app);
 
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const file = fileInput.files[0];
-    if (!file) return alert("Please select a file.");
+// // Wait until the DOM is fully loaded
+// window.addEventListener('DOMContentLoaded', () => {
+//   const form = document.getElementById('customOrderForm');
+//   const fileInput = document.getElementById("photoInput");
+//   const statusDiv = document.getElementById('status');
 
 
-    // Create a unique reference in Firebase Storage
-    const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
+//   form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const file = fileInput.files[0];
+//     if (!file) return alert("Please select a file.");
+
+
+//     // Create a unique reference in Firebase Storage
+//     const storageRef = ref(storage, `orders/${Date.now()}_${file.name}`);
 
 
     
-    try {
-      // Upload file
-      const snapshot = await uploadBytes(storageRef, file);
-      const downloadURL = await getDownloadURL(snapshot.ref);
-      statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
-      console.log("Uploaded file URL:", downloadURL);
+//     try {
+//       // Upload file
+//       const snapshot = await uploadBytes(storageRef, file);
+//       const downloadURL = await getDownloadURL(snapshot.ref);
+//       statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
+//       console.log("Uploaded file URL:", downloadURL);
       
-    } catch (err) {
-      console.error("Upload failed:", err);
-      statusDiv.innerText = "Upload Succesful! Thank you for submitting an order! You will receive an email within 3 business days from clarisa.crea@gmail.com.";
+//     } catch (err) {
+//       console.error("Upload failed:", err);
+//       statusDiv.innerText = "Upload Succesful! Thank you for submitting an order! You will receive an email within 3 business days from clarisa.crea@gmail.com.";
   
-    }
-  });
-});
+//     }
+//   });
+// });
+// This has been commented becaue still need to store input user data and create an entire form.
