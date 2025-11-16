@@ -45,18 +45,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const file = fileInput.files[0];
     if (!file) return alert("Please select a file.");
 
-    const nameInput = form.name.value.replace(/\s+/g, '_');  // replace spaces with underscores
-    const emailInput = form.email.value.replace(/\s+/g, '_');
-
     const metadata = {
       customMetadata: {
-        name: form.name.value,
-        email: form.email.value
+      name: form.name.value,
+      email: form.email.value,
   }
 };
 
     // Create a unique reference in Firebase Storage
-    const storageRef = ref(storage, `orders/${nameInput}_${emailInput}_${file.name}`);
+    const storageRef = ref(storage, `orders/${nameInput}_${file.name}`);
 
 
     
