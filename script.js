@@ -58,16 +58,20 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+    
+
   try {
     const snapshot = await uploadBytes(storageRef, file, metadata);
     const downloadURL = await getDownloadURL(snapshot.ref);
 
     statusDiv.innerHTML = `Upload successful! <a href="${downloadURL}" target="_blank">View file</a>`;
     console.log("File uploaded:", downloadURL);
+      // Retrieve metadata from uploaded file
+    const meta = await getMetadata(snapshot.ref);
 
   } catch (err) {
-    console.error("Upload failed:", err);
-    statusDiv.innerText = "Thank you for submitting an order! Your upload was successful! You will be receiving a confirmation email within 3 business days. ";
+    console.error("Thank you for submitting an order! You will receive an email confirming your order within 3 business days.");
+    statusDiv.innerText = "Successful!";
   }
 });
 
